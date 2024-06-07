@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@5
+
 workflows:
   version: 2
   build_and_push:
@@ -9,7 +12,7 @@ workflows:
 jobs:
   build:
     docker:
-      - image: circleci/node:18-alpine
+      - image: cimg/node:21.5.0
     steps:
       - checkout
       - setup_remote_docker:
